@@ -1,10 +1,6 @@
-21:22:09 **** Incremental Build of configuration Debug for project 1852238-Lab3 ****
+23:24:14 **** Incremental Build of configuration Debug for project 1852238-Lab3 ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:99:7: warning: unused variable 'mode' [-Wunused-variable]
-   99 |   int mode = 0;
-      |       ^~~~
+arm-none-eabi-gcc "../Core/Src/button.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/button.d" -MT"Core/Src/button.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/button.o"
 arm-none-eabi-gcc -o "1852238-Lab3.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\LearningMaterial\Mirco-Processor\Lab3\mProcessor-Lab3\STM32\1852238-Lab3\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1852238-Lab3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: 1852238-Lab3.elf
  
@@ -13,11 +9,11 @@ arm-none-eabi-objdump -h -S  1852238-Lab3.elf  > "1852238-Lab3.list"
 arm-none-eabi-objcopy  -O ihex  1852238-Lab3.elf  "1852238-Lab3.hex"
 arm-none-eabi-objcopy  -O binary  1852238-Lab3.elf  "1852238-Lab3.bin"
    text	   data	    bss	    dec	    hex	filename
-   7352	     44	   1660	   9056	   2360	1852238-Lab3.elf
+  10688	     80	   1720	  12488	   30c8	1852238-Lab3.elf
 Finished building: default.size.stdout
  
-Finished building: 1852238-Lab3.bin
 Finished building: 1852238-Lab3.hex
+Finished building: 1852238-Lab3.bin
 Finished building: 1852238-Lab3.list
  
  

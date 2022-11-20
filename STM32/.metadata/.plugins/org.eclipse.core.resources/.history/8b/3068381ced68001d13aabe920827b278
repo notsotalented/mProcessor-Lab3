@@ -1,0 +1,75 @@
+/*
+ * fsm_mode.c
+ *
+ *  Created on: Nov 13, 2022
+ *      Author: ASUS
+ */
+
+#include "fsm_mode.h"
+
+void fsm_mode_run() {
+	switch(mode) {
+	case 0:
+		fsm_traffic_run();
+
+		break;
+	case 1: //Tweak red
+		display7SEG(red_time);
+		HAL_GPIO_WritePin(YELLOW_0_GPIO_Port, YELLOW_0_Pin, SET);
+		HAL_GPIO_WritePin(GREEN_0_GPIO_Port, GREEN_0_Pin, SET);
+		HAL_GPIO_WritePin(YELLOW_1_GPIO_Port, YELLOW_1_Pin, SET);
+		HAL_GPIO_WritePin(GREEN_1_GPIO_Port, GREEN_1_Pin, SET);
+
+		if (timer2_flag == 1) {
+			timer2_flag = 0;
+			//TODO
+			HAL_GPIO_TogglePin(RED_0_GPIO_Port, RED_0_Pin);
+			HAL_GPIO_TogglePin(RED_1_GPIO_Port, RED_1_Pin);
+
+			setTimer2(250);
+		}
+
+		break;
+
+	case 2: //Tweak yellow
+		display7SEG(temp);
+		HAL_GPIO_WritePin(RED_0_GPIO_Port, RED_0_Pin, SET);
+		HAL_GPIO_WritePin(GREEN_0_GPIO_Port, GREEN_0_Pin, SET);
+		HAL_GPIO_WritePin(RED_1_GPIO_Port, RED_1_Pin, SET);
+		HAL_GPIO_WritePin(GREEN_1_GPIO_Port, GREEN_1_Pin, SET);
+
+		if (timer2_flag == 1) {
+			timer2_flag = 0;
+			//TODO
+			HAL_GPIO_TogglePin(YELLOW_0_GPIO_Port, YELLOW_0_Pin);
+			HAL_GPIO_TogglePin(YELLOW_1_GPIO_Port, YELLOW_1_Pin);
+
+			setTimer2(250);
+		}
+
+		break;
+
+	case 3: //Tweak green
+		display7SEG(temp);
+		HAL_GPIO_WritePin(RED_0_GPIO_Port, RED_0_Pin, SET);
+		HAL_GPIO_WritePin(YELLOW_0_GPIO_Port, YELLOW_0_Pin, SET);
+		HAL_GPIO_WritePin(RED_1_GPIO_Port, RED_1_Pin, SET);
+		HAL_GPIO_WritePin(YELLOW_1_GPIO_Port, YELLOW_1_Pin, SET);
+
+		if (timer2_flag == 1) {
+			timer2_flag = 0;
+			//TODO
+			HAL_GPIO_TogglePin(GREEN_0_GPIO_Port, GREEN_0_Pin);
+			HAL_GPIO_TogglePin(GREEN_1_GPIO_Port, GREEN_1_Pin);
+
+			setTimer2(250);
+		}
+
+		break;
+	default:
+		display7SEG(99);
+		settraffic(99);
+
+		break;
+	}
+}

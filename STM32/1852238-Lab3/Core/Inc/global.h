@@ -10,8 +10,20 @@
 
 #include "software_timer.h"
 #include "button.h"
+#include "led_processing.h"
+#include "fsm_mode.h"
+#include "fsm_traffic.h"
 #include "main.h"
 
 extern int mode;
+extern int red_time;
+extern int yellow_time;
+extern int green_time;
+extern int state;
+extern int temp;
+
+extern int led7SEG[7];
+extern int ledtraffic0[3];
+extern int ledtraffic1[3];
 
 #endif /* INC_GLOBAL_H_ */

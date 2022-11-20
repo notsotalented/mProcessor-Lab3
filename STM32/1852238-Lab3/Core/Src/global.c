@@ -6,3 +6,10 @@
  */
 
 #include "global.h"
+
+int mode = 0;
+int red_time = 0;
+int yellow_time = 0;
+int green_time = 0;
+int state = -1;
+int temp = 0;

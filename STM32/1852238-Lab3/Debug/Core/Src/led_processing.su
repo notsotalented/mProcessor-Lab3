@@ -1,0 +1,7 @@
+led_processing.c:15:6:write7SEG	16	static
+led_processing.c:41:6:set7SEG	336	static
+led_processing.c:102:6:writetraffic	16	static
+led_processing.c:113:6:settraffic	40	static
+led_processing.c:144:6:display7SEG	16	static
+led_processing.c:155:6:display2Counter	16	static
+led_processing.c:172:6:SecLED	8	static
